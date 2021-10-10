@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: fedia
+Build-Jdk: 11.0.4
+Implementation-Title: tpDependencyInjectionTODO
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.esprit.injection
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/tpDependencyInjectionTODO
+Created-By: Maven Integration for Eclipse
+
