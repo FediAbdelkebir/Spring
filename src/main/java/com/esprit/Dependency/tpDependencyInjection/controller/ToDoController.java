@@ -16,7 +16,7 @@ public class ToDoController {
 	public List<String> GetXML() {
 		return toDoService.getCoursesList();
 	}
-	@Primary
+	
 	public List<String> Spring() {
 		return toDoService.Spring();
 	}
