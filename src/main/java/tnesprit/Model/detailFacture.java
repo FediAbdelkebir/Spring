@@ -20,7 +20,7 @@ public class detailFacture implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="iddetailFacture")
-	private int iddetailFacture;
+	private long iddetailFacture;
 
 	@Column(name="qte")
 	private int qte;
@@ -57,7 +57,7 @@ public class detailFacture implements Serializable{
 				+ ", pourcentageRemise=" + pourcentageRemise + ", montantRemise=" + montantRemise + "]";
 	}
 
-	public int getIddetailFacture() {
+	public long getIddetailFacture() {
 		return iddetailFacture;
 	}
 

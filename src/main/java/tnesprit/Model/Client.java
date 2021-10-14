@@ -20,7 +20,7 @@ public class Client implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idClient")
-	private int idClient;
+	private long idClient;
 	
 	@Column(name="nom", nullable=false)
 	private int nom;
@@ -86,7 +86,7 @@ public class Client implements Serializable{
 		this.profession = profession;
 	}
 
-	public int getIdClient() {
+	public long getIdClient() {
 		return idClient;
 	}
 

@@ -21,7 +21,7 @@ public class Rayon implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idRayon")
-	private int idRayon;
+	private long idRayon;
 
 	@Column(name="code", nullable=false)
 	private String code;
@@ -47,7 +47,7 @@ public class Rayon implements Serializable{
 		return "Rayon [idRayon=" + idRayon + ", code=" + code + ", libelle=" + libelle + "]";
 	}
 
-	public int getIdRayon() {
+	public long getIdRayon() {
 		return idRayon;
 	}
 

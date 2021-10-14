@@ -22,7 +22,7 @@ public class DetailProduit implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idDetailProduit")
-	private int idDetailProduit;
+	private long idDetailProduit;
 	
 	@Column(name="dateCreation", nullable=false)
 	private Date dateCreation;
@@ -56,7 +56,7 @@ public class DetailProduit implements Serializable{
 				+ "]";
 	}
 
-	public int getIdDetailProduit() {
+	public long getIdDetailProduit() {
 		return idDetailProduit;
 	}
 

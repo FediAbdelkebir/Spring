@@ -21,7 +21,7 @@ public class Stock implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idStock")
-	private int idStock;
+	private long idStock;
 
 	@Column(name="qte", nullable=false)
 	private int qte;
@@ -55,7 +55,7 @@ public class Stock implements Serializable{
 				+ "]";
 	}
 
-	public int getIdStock() {
+	public long getIdStock() {
 		return idStock;
 	}
 

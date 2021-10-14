@@ -20,12 +20,12 @@ public class Fournisseur implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idFournisseur")
-	private int idFournisseur;
+	private long idFournisseur;
 
-	@Column(name="code", nullable=false)
+	@Column(name="codeFournisseur", nullable=false)
 	private String code;
 	
-	@Column(name="libelle", nullable=false)
+	@Column(name="libelleFournisseur", nullable=false)
 	private String libelle;
 	
 	public Fournisseur(String code, String libelle) {
@@ -46,7 +46,7 @@ public class Fournisseur implements Serializable{
 		return "Fournisseur [idFournisseur=" + idFournisseur + ", code=" + code + ", libelle=" + libelle + "]";
 	}
 
-	public int getIdFournisseur() {
+	public long getIdFournisseur() {
 		return idFournisseur;
 	}
 

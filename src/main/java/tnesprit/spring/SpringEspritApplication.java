@@ -1,12 +1,14 @@
 package tnesprit.spring;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 @EntityScan("tnesprit.Model")
 @SpringBootApplication
 public class SpringEspritApplication {

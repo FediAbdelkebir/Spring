@@ -20,7 +20,7 @@ public class Produit implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idProduit")
-	private int idProduit;
+	private long idProduit;
 
 	@Column(name="code", nullable=false)
 	private String code;
@@ -52,7 +52,7 @@ public class Produit implements Serializable{
 				+ prixUnitaire + "]";
 	}
 
-	public int getIdProduit() {
+	public long getIdProduit() {
 		return idProduit;
 	}
 
