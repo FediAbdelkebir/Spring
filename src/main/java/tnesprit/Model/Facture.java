@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +35,11 @@ public class Facture implements Serializable{
 	
 	@Column(name="Active")
 	private Boolean Active;
+	
+	@ManyToOne
+	private Client client;
+	@ManyToOne
+	private detailFacture detailfacture;
 	
 	public Facture(float montantRemise, float montantFacture, Date dateFacture, Boolean active) {
 		super();

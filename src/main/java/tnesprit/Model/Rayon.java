@@ -1,12 +1,14 @@
 package tnesprit.Model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +31,9 @@ public class Rayon implements Serializable{
 	@Column(name="libelle", nullable=false)
 	private String libelle;
 
+	@OneToMany
+	private Set<Produit> produit;
+	
 	public Rayon(String code, String libelle) {
 		super();
 		this.code = code;

@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +32,7 @@ public class DetailProduit implements Serializable{
 	@Column(name="dateDerniereModification", nullable=false)
 	private Date dateDerniereModification;
 
-	@Column(name="categorieProduit", nullable=false)
+	@Enumerated(EnumType.STRING)
 	private CategorieProduit categorieProduit;
 	
 	public DetailProduit(Date dateCreation, Date dateDerniereModification, CategorieProduit categorieProduit) {
