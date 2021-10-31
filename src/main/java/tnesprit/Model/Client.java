@@ -35,7 +35,7 @@ public class Client implements Serializable{
 	private String prenom;
 	
 	@Column(name="dateNaissance", nullable=false)
-	private int dateNaissance;
+	private String dateNaissance;
 
 	@Column(name="email", nullable=false)
 	private String email;
@@ -62,7 +62,7 @@ public class Client implements Serializable{
 				+ ", profession=" + profession + "]";
 	}
 
-	public Client(String nom, String prenom, int dateNaissance, String email, String password, CategorieClient categorieClient,
+	public Client(String nom, String prenom, String dateNaissance, String email, String password, CategorieClient categorieClient,
 			Profession profession) {
 		super();
 		this.nom = nom;
@@ -74,7 +74,7 @@ public class Client implements Serializable{
 		this.profession = profession;
 	}
 
-	public Client(int idClient, String nom, String prenom, int dateNaissance, String email, String password,
+	public Client(int idClient, String nom, String prenom, String dateNaissance, String email, String password,
 			CategorieClient categorieClient, Profession profession) {
 		super();
 		this.idClient = idClient;
@@ -119,11 +119,11 @@ public class Client implements Serializable{
 		this.prenom = prenom;
 	}
 
-	public int getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(int dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
