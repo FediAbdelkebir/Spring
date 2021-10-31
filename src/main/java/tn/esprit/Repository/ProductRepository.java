@@ -15,7 +15,7 @@ public interface ProductRepository extends CrudRepository<Produit,Long>{
 
 	 @Transactional
 	 @Modifying
-	 @Query(value="INSERT INTO produit(rayon,stock) VALUES(:rayon,:stock) ",nativeQuery = true)
-	 public void InsertRayonStock(@Param("rayon") Long rayonId,@Param("stock") Long stockid);
+	 @Query(value="UPDATE produit SET rayon= :rayon,stock= :stock WHERE idProduit= :idProduit ",nativeQuery = true)
+	 public void InsertRayonStock(@Param("idProduit")Long idProduit,@Param("rayon") Long rayonId,@Param("stock") Long stockid);
 	    
 }

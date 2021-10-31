@@ -29,7 +29,7 @@ public class ProductServiceImpl {
 		//DP.setCategorieProduit();
 		CR.save(produit);
 		DPR.save(DP);
-		CR.InsertRayonStock(RayonId,Stockid);
+		CR.InsertRayonStock(produit.getIdProduit(),RayonId,Stockid);
 		
 	}
 	public Set<Produit> Produits(){
