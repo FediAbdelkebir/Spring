@@ -1,5 +1,6 @@
 package tn.esprit.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -28,6 +29,9 @@ public class ClientServiceImpl {
 	}
 	public Optional<Client> FindClient(Client client) {
 		return CR.findById(client.getIdClient());
+	}
+	public List<Client> FindAllBetween(){
+		return CR.findAllClientsBetween();
 	}
 
 }
