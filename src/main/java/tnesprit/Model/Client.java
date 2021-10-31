@@ -29,20 +29,20 @@ public class Client implements Serializable{
 	private long idClient;
 	
 	@Column(name="nom", nullable=false)
-	private int nom;
+	private String nom;
 	
 	@Column(name="prenom", nullable=false)
-	private int prenom;
+	private String prenom;
 	
 	@Column(name="dateNaissance", nullable=false)
 	private int dateNaissance;
 
 	@Column(name="email", nullable=false)
-	private int email;
+	private String email;
 	
 
 	@Column(name="password", nullable=false)
-	private int password;
+	private String password;
 	
 
 	@Enumerated(EnumType.STRING)
@@ -62,7 +62,7 @@ public class Client implements Serializable{
 				+ ", profession=" + profession + "]";
 	}
 
-	public Client(int nom, int prenom, int dateNaissance, int email, int password, CategorieClient categorieClient,
+	public Client(String nom, String prenom, int dateNaissance, String email, String password, CategorieClient categorieClient,
 			Profession profession) {
 		super();
 		this.nom = nom;
@@ -74,7 +74,7 @@ public class Client implements Serializable{
 		this.profession = profession;
 	}
 
-	public Client(int idClient, int nom, int prenom, int dateNaissance, int email, int password,
+	public Client(int idClient, String nom, String prenom, int dateNaissance, String email, String password,
 			CategorieClient categorieClient, Profession profession) {
 		super();
 		this.idClient = idClient;
@@ -103,19 +103,19 @@ public class Client implements Serializable{
 		this.idClient = idClient;
 	}
 
-	public int getNom() {
+	public String getNom() {
 		return nom;
 	}
 
-	public void setNom(int nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	public int getPrenom() {
+	public String getPrenom() {
 		return prenom;
 	}
 
-	public void setPrenom(int prenom) {
+	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
@@ -127,19 +127,19 @@ public class Client implements Serializable{
 		this.dateNaissance = dateNaissance;
 	}
 
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
