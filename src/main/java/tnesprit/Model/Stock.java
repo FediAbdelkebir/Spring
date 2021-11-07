@@ -10,9 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 @Table(name="Stock")
-
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Stock implements Serializable{
 
 	/**
@@ -34,62 +47,5 @@ public class Stock implements Serializable{
 
 	@Column(name="libelleStock", nullable=false)
 	private String libelleStock;
-
-	public Stock(int qte, int qteMin, String libelleStock) {
-		super();
-		this.qte = qte;
-		this.qteMin = qteMin;
-		this.libelleStock = libelleStock;
-	}
-
-	public Stock(int idStock, int qte, int qteMin, String libelleStock) {
-		super();
-		this.idStock = idStock;
-		this.qte = qte;
-		this.qteMin = qteMin;
-		this.libelleStock = libelleStock;
-	}
-
-	@Override
-	public String toString() {
-		return "Stock [idStock=" + idStock + ", qte=" + qte + ", qteMin=" + qteMin + ", libelleStock=" + libelleStock
-				+ "]";
-	}
-
-	public long getIdStock() {
-		return idStock;
-	}
-
-	public void setIdStock(int idStock) {
-		this.idStock = idStock;
-	}
-
-	public int getQte() {
-		return qte;
-	}
-
-	public void setQte(int qte) {
-		this.qte = qte;
-	}
-
-	public int getQteMin() {
-		return qteMin;
-	}
-
-	public void setQteMin(int qteMin) {
-		this.qteMin = qteMin;
-	}
-
-	public String getLibelleStock() {
-		return libelleStock;
-	}
-
-	public void setLibelleStock(String libelleStock) {
-		this.libelleStock = libelleStock;
-	}
-
-	public Stock() {
-		// TODO Auto-generated constructor stub
-	}
 
 }

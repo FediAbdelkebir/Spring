@@ -9,8 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 @Table(name="detailFacture")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class detailFacture implements Serializable{
 	/**
 	 * 
@@ -34,71 +48,4 @@ public class detailFacture implements Serializable{
 	@Column(name="montantRemise")
 	private float montantRemise;
 	
-	public detailFacture(int iddetailFacture, int qte, float prixTotal, int pourcentageRemise, float montantRemise) {
-		super();
-		this.iddetailFacture = iddetailFacture;
-		this.qte = qte;
-		this.prixTotal = prixTotal;
-		this.pourcentageRemise = pourcentageRemise;
-		this.montantRemise = montantRemise;
-	}
-
-	public detailFacture(int qte, float prixTotal, int pourcentageRemise, float montantRemise) {
-		super();
-		this.qte = qte;
-		this.prixTotal = prixTotal;
-		this.pourcentageRemise = pourcentageRemise;
-		this.montantRemise = montantRemise;
-	}
-
-	@Override
-	public String toString() {
-		return "detailFacture [iddetailFacture=" + iddetailFacture + ", qte=" + qte + ", prixTotal=" + prixTotal
-				+ ", pourcentageRemise=" + pourcentageRemise + ", montantRemise=" + montantRemise + "]";
-	}
-
-	public long getIddetailFacture() {
-		return iddetailFacture;
-	}
-
-	public void setIddetailFacture(int iddetailFacture) {
-		this.iddetailFacture = iddetailFacture;
-	}
-
-	public int getQte() {
-		return qte;
-	}
-
-	public void setQte(int qte) {
-		this.qte = qte;
-	}
-
-	public float getPrixTotal() {
-		return prixTotal;
-	}
-
-	public void setPrixTotal(float prixTotal) {
-		this.prixTotal = prixTotal;
-	}
-
-	public int getPourcentageRemise() {
-		return pourcentageRemise;
-	}
-
-	public void setPourcentageRemise(int pourcentageRemise) {
-		this.pourcentageRemise = pourcentageRemise;
-	}
-
-	public float getMontantRemise() {
-		return montantRemise;
-	}
-
-	public void setMontantRemise(float montantRemise) {
-		this.montantRemise = montantRemise;
-	}
-
-	public detailFacture() {
-		// TODO Auto-generated constructor stub
-	}
-
 }

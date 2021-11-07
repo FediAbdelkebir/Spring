@@ -12,8 +12,22 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 @Entity
 @Table(name="Produit")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Produit implements Serializable{
 	
 	/**
@@ -44,61 +58,4 @@ public class Produit implements Serializable{
 	@OneToOne
 	private DetailProduit detailproduit;
 	
-	public Produit(String code, String libelle, String prixUnitaire) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
-		this.prixUnitaire = prixUnitaire;
-	}
-
-	public Produit(int idProduit, String code, String libelle, String prixUnitaire) {
-		super();
-		this.idProduit = idProduit;
-		this.code = code;
-		this.libelle = libelle;
-		this.prixUnitaire = prixUnitaire;
-	}
-
-	@Override
-	public String toString() {
-		return "Produit [idProduit=" + idProduit + ", code=" + code + ", libelle=" + libelle + ", prixUnitaire="
-				+ prixUnitaire + "]";
-	}
-
-	public long getIdProduit() {
-		return idProduit;
-	}
-
-	public void setIdProduit(int idProduit) {
-		this.idProduit = idProduit;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-
-	public String getPrixUnitaire() {
-		return prixUnitaire;
-	}
-
-	public void setPrixUnitaire(String prixUnitaire) {
-		this.prixUnitaire = prixUnitaire;
-	}
-
-	public Produit() {
-		// TODO Auto-generated constructor stub
-	}
-
 }

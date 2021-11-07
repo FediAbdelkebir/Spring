@@ -7,15 +7,17 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.Repository.ClientRepository;
 import tnesprit.Model.Client;
 
 @Service
+@Slf4j
 public class ClientServiceImpl {
 	@Autowired
 	ClientRepository CR;
-	public void AjouterClient(Client client) {
-		CR.save(client);
+	public Client AjouterClient(Client client) {
+		return CR.save(client);
 	}
 	public void UpdateClient(Client client) {
 		CR.update(client.getIdClient(), client.getDateNaissance(), client.getNom(), client.getPrenom(), client.getPassword(), client.getCategorieClient(), client.getProfession());
@@ -32,6 +34,10 @@ public class ClientServiceImpl {
 	}
 	public List<Client> FindAllBetween(){
 		return CR.findAllClientsBetween();
+	}
+	public List<Client> getAllClients() {
+		// TODO Auto-generated method stub
+		return (List<Client>) CR.findAll();
 	}
 
 }

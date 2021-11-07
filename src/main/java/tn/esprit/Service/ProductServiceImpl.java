@@ -3,17 +3,20 @@ package tn.esprit.Service;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.Repository.DetailleProduitRepository;
 import tn.esprit.Repository.ProductRepository;
 import tnesprit.Model.DetailProduit;
 import tnesprit.Model.Produit;
 @Service
+@Slf4j
 public class ProductServiceImpl {
 
 	@Autowired
@@ -37,6 +40,19 @@ public class ProductServiceImpl {
 	}
 	public Optional<Produit> FindProduit(Produit produit) {
 		return CR.findById(produit.getIdProduit());
+	}
+	public List<Produit> getAllProduits() {
+		// TODO Auto-generated method stub
+		return (List<Produit>) CR.findAll();
+	}
+	public Produit AjouterProduct(Produit s) {
+		// TODO Auto-generated method stub
+		return CR.save(s);
+	}
+	public void SuppimerProduct(Produit savedProduct) {
+		// TODO Auto-generated method stub
+		CR.delete(savedProduct);
+		
 	}
 
 }

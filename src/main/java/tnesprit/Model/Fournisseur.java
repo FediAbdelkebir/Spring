@@ -9,8 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 @Table(name="Fournisseur")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Fournisseur implements Serializable{
 
 	/**
@@ -28,50 +42,4 @@ public class Fournisseur implements Serializable{
 	@Column(name="libelleFournisseur", nullable=false)
 	private String libelle;
 	
-	public Fournisseur(String code, String libelle) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
-	}
-
-	public Fournisseur(int idFournisseur, String code, String libelle) {
-		super();
-		this.idFournisseur = idFournisseur;
-		this.code = code;
-		this.libelle = libelle;
-	}
-
-	@Override
-	public String toString() {
-		return "Fournisseur [idFournisseur=" + idFournisseur + ", code=" + code + ", libelle=" + libelle + "]";
-	}
-
-	public long getIdFournisseur() {
-		return idFournisseur;
-	}
-
-	public void setIdFournisseur(int idFournisseur) {
-		this.idFournisseur = idFournisseur;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-
-	public Fournisseur() {
-		// TODO Auto-generated constructor stub
-	}
-
 }
