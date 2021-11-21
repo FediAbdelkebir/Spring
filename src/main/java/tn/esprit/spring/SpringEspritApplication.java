@@ -3,6 +3,7 @@ package tn.esprit.spring;
 
 import java.awt.List;
 
+
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -15,12 +16,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 
-import tn.esprit.spring.Model.Fournisseur;
-import tn.esprit.spring.Model.Produit;
-import tn.esprit.spring.Model.Rayon;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import tn.esprit.spring.entity.Fournisseur;
+import tn.esprit.spring.entity.Produit;
+import tn.esprit.spring.entity.Rayon;
 import tn.esprit.spring.Repository.FournisseurRepository;
 import tn.esprit.spring.Repository.RayonRepository;
-@EntityScan("tn.esprit.spring.Model")
+@EntityScan("tn.esprit.spring.entity")
+@EnableSwagger2
 @SpringBootApplication
 public class SpringEspritApplication {
 

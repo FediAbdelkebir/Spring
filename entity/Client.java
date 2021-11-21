@@ -1,72 +1,74 @@
-package tn.esprit.spring.Model;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author HP
+ *
+ */
+
 @Entity
 @Table(name="Client")
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
 public class Client implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -4874606733340950834L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idClient")
-	private long idClient;
 	
-	@Column(name="nom", nullable=false)
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="idClient")
+	private Long idClient;
+	
+	@Column(name="nom")
 	private String nom;
 	
-	@Column(name="prenom", nullable=false)
-	private String prenom;
+	@Column(name="prenom")
+	private String prenom; 
 	
-	@Column(name="dateNaissance", nullable=false)
-	private String dateNaissance;
-
-	@Column(name="email", nullable=false)
+	@Column(name="dateNaissance")
+	private Date dateNaissance;
+	
+	@Column(name="email")
 	private String email;
 	
-
-	@Column(name="password", nullable=false)
+	@Column(name="password")
 	private String password;
 	
-
 	@Enumerated(EnumType.STRING)
+	@Column(name="categorieClient")
 	private CategorieClient categorieClient;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name="profession")
 	private Profession profession;
 	
-	@ManyToOne(targetEntity=Facture.class,cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
-	@JoinColumn(name="idFacture")
-	private Facture facture;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	private Set<Facture> Facture;
 
+		
+	
 }

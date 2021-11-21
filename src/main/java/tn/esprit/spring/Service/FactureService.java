@@ -1,12 +1,11 @@
 package tn.esprit.spring.Service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class FactureService {
+import tn.esprit.spring.entity.Facture;
 
-	public FactureService() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface FactureService {
+	List<Facture> retrieveAllFactures();
+	void cancelFacture(Long id);
+	Facture retrieveFacture(Long id);
 }

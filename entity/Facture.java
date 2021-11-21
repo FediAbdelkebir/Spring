@@ -1,42 +1,44 @@
-package tn.esprit.spring.Model;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+
 @Entity
 @Table(name="Facture")
+
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+/* Data : remplace getter, setter, constructeurs, toString, equals */
 public class Facture implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1429645713063605826L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="idFacture")
-	private long idFacture;
+	private Long idFacture;
 	
 	@Column(name="montantRemise")
 	private float montantRemise;
@@ -47,13 +49,17 @@ public class Facture implements Serializable{
 	@Column(name="dateFacture")
 	private Date dateFacture;
 	
-	@Column(name="Active")
-	private Boolean Active;
+	@Column(name="active")
+	private float active;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="facture")
+	private Set<DetailFacture> detailFacture;
 	
 	@ManyToOne
 	private Client client;
-	@ManyToOne
-	private detailFacture detailfacture;
 	
-
+	// fatal : résultat inattendu 
+	// error : méthode ne s'exécute pas 
+	
+	
 }

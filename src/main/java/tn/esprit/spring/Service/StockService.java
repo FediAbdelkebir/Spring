@@ -1,12 +1,14 @@
 package tn.esprit.spring.Service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class StockService {
+import tn.esprit.spring.entity.Stock;
 
-	public StockService() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface StockService {
+	List<Stock> retrieveAllStocks();
+	Stock addStock(Stock s);
+	Stock updateStock(Stock u);
+	Stock retrieveStock(Long id);
+	void deleteStock(Long id);
+	
 }

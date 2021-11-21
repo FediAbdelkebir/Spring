@@ -2,8 +2,10 @@ package tn.esprit.spring.Repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import tn.esprit.spring.Model.DetailProduit;
+import org.springframework.stereotype.Repository;
 
+import tn.esprit.spring.entity.DetailProduit;
+@Repository
 public interface DetailleProduitRepository extends CrudRepository<DetailProduit,Long>{
 
 }
